@@ -7,21 +7,21 @@
    CSS Variables
    ============================================================ */
 :root {
-    --primary:       #4a7c99;
-    --primary-light: #5b9bbf;
-    --primary-hover: #3d6880;
-    --accent:        #c07a3a;
-    --bg:            #fafaf8;
-    --surface:       #ffffff;
-    --border:        #e8e8e3;
-    --text:          #2d2d2d;
-    --text-muted:    #767670;
-    --nav-bg:        #ffffff;
-    --nav-border:    #e8e8e3;
+    --primary:       #003049;   /* dark navy — main text, headings, nav brand */
+    --primary-light: #669bbc;   /* steel blue — links, hover, accents */
+    --highlight:     #780000;   /* deep red — highlight news, active nav */
+    --accent:        #c1121f;   /* bright red — medals, dates, badges */
+    --bg:            #fdf0d5;   /* warm cream — page background */
+    --surface:       #fff8ec;   /* slightly lighter cream — cards */
+    --border:        #e8d8b0;   /* warm tan — borders */
+    --text:          #003049;   /* dark navy — body text */
+    --text-muted:    #5a6e7a;   /* muted blue-grey — secondary text */
+    --nav-bg:        #003049;   /* dark navy — header */
+    --nav-border:    #002030;
     --nav-height:    62px;
     --max-width:     860px;
     --radius:        8px;
-    --shadow:        0 1px 6px rgba(0,0,0,0.07);
+    --shadow:        0 1px 6px rgba(0,48,73,0.1);
     --transition:    0.18s ease;
 }
 
@@ -51,6 +51,16 @@ a {
 
 a:hover { color: var(--primary); text-decoration: underline; }
 
+.name-link {
+    color: var(--highlight);
+    text-decoration: none;
+}
+
+.name-link:hover {
+    color: var(--highlight);
+    text-decoration: underline;
+}
+
 /* ============================================================
    Navigation
    ============================================================ */
@@ -76,7 +86,7 @@ header nav {
 .nav-brand {
     font-size: 1.08rem;
     font-weight: 700;
-    color: var(--text);
+    color: #fdf0d5;
     letter-spacing: 0.01em;
 }
 
@@ -89,7 +99,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: var(--text-muted);
+    color: rgba(253,240,213,0.75);
     text-decoration: none;
     padding: 7px 15px;
     border-radius: 6px;
@@ -101,7 +111,7 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a.active {
     background: none;
-    color: var(--primary);
+    color: #fdf0d5;
     text-decoration: none;
 }
 
@@ -143,12 +153,12 @@ section {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #c9dce8 0%, #a8c4d4 100%);
+    background: linear-gradient(135deg, #003049 0%, #669bbc 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.8rem;
-    color: var(--primary);
+    color: #fdf0d5;
     border: 3px solid var(--border);
     box-shadow: none;
 }
@@ -242,38 +252,40 @@ section {
 
 .news-item {
     font-size: 0.93rem;
-    color: #555;
+    color: var(--text);
     line-height: 1.6;
 }
 
 .news-highlight {
-    color: #9b3a2e;
+    color: var(--highlight);
     font-weight: 500;
 }
 
 .news-highlight .news-date {
-    color: #9b3a2e;
+    color: var(--highlight);
 }
 
 .news-date {
     font-weight: 600;
-    color: #555;
+    color: var(--text);
+    min-width: 90px;
+    flex-shrink: 0;
 }
 
 #news .section-heading {
-    color: #555;
+    color: var(--primary);
 }
 
 #news .section-heading::before {
-    background: #aaa;
+    background: var(--primary-light);
 }
 
 #research-interests .section-heading {
-    color: #555;
+    color: var(--primary);
 }
 
 #research-interests .section-heading::before {
-    background: #aaa;
+    background: var(--primary-light);
 }
 
 .interest-tags {
@@ -286,9 +298,9 @@ section {
 }
 
 .interest-tag {
-    background: #f4f8fb;
-    color: #555;
-    border: 1px solid #c8dce8;
+    background: #e8f0f5;
+    color: var(--primary);
+    border: 1px solid #669bbc;
     padding: 6px 15px;
     border-radius: 20px;
     font-size: 0.865rem;
@@ -297,9 +309,9 @@ section {
 }
 
 .interest-tag:hover {
-    background: var(--primary-light);
-    color: #fff;
-    border-color: var(--primary-light);
+    background: var(--primary);
+    color: #fdf0d5;
+    border-color: var(--primary);
     transform: translateY(-1px);
 }
 
@@ -317,24 +329,24 @@ section {
 
 .pub-item {
     font-size: 0.93rem;
-    color: #555;
+    color: var(--text);
     line-height: 1.6;
 }
 
 .pub-item a {
-    color: #555;
+    color: var(--primary-light);
 }
 
 /* ============================================================
    Footer
    ============================================================ */
 footer {
-    background: #f3f3ef;
-    color: var(--text-muted);
+    background: var(--primary);
+    color: rgba(253,240,213,0.7);
     text-align: center;
-    padding: none;
+    padding: 20px;
     font-size: 0.82rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--nav-border);
 }
 
 /* ============================================================
