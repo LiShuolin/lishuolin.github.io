@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — Shuolin Li</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Research Topic 1 -->
+        <section class="research-item">
+            <h2 class="section-heading">Activity-Guided Variable Elimination in SAT Solvers</h2>
+            <p>
+                Solvers such as Kissat can be viewed as alternating between two phases: learning new clauses via general resolution and eliminating variables through regular resolution. General resolution is known to be exponentially stronger than regular resolution, implying that the variable elimination phase may exponentially degrade solver performance.
+            </p>
+            <p>
+                We proposed a novel variable ordering scheme, ESA (Elimination Scheduled by Activity), which prioritizes variable elimination based on their activity during search. This allows the solver to benefit from variable elimination while mitigating its negative impact on clause learning and search efficiency.
+            </p>
+            <p>
+                The ESA ordering was published in IJCAI 2023 and led to the gold and silver medals in the Anniversary Track of the SAT Competition 2022, which summarizes the last 20 editions of the event. We then implemented the ESA ordering in a MaxSAT solver for variable elimination, which contributed to first- and second-place rankings at the MaxSAT Evaluation 2023. More recently, we have extended the ESA ordering to clause ordering to guide clause vivification, which won the bronze medal in the main track and the silver medal in the UNSAT track of the SAT Competition 2025.
+            </p>
+            <div class="research-tags">
+                <span class="interest-tag">SAT</span>
+                <span class="interest-tag">Bounded Variable Elimination</span>
+                <span class="interest-tag">CDCL</span>
+            </div>
+        </section>
+
+        <!-- Research Topic 2 -->
+        <section class="research-item">
+            <h2 class="section-heading">Efficient Pruning in Branch-and-Bound (BnB) MaxSAT Solvers</h2>
+            <p>
+                A tight lower bound (LB) in a BnB MaxSAT solver is essential to prune large subspaces that do not contain any solution. However, previous LBs relied on disjoint unsatisfiable subsets of clauses that are guaranteed to contain only one falsified clause under any assignment. We proposed an unlocking mechanism to detect disjoint unsatisfiable subsets of clauses that are guaranteed to contain multiple falsified clauses, which significantly improves the lower bound.
+            </p>
+            <p>
+                The unlocking mechanism was published at AAAI 2025 and was implemented in a new solver that won first place in the 2024 MaxSAT Evaluation. Building on this, we proposed two further improvements: an optimization of the detection order for weighted instances (accepted at IJCAI 2026), and a method for further mining unsatisfiable clause subsets within the existing structure for unweighted instances (accepted at CP 2026).
+            </p>
+            <div class="research-tags">
+                <span class="interest-tag">MaxSAT</span>
+                <span class="interest-tag">Branch-and-Bound</span>
+                <span class="interest-tag">Unsatisfiable Clauses Set</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; Last updated June 2026.</p>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>
